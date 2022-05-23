@@ -1,3 +1,6 @@
+# Release by Hakos
+we are working on it
+
 # qb-truckerjob
 Trucker Job For QB-Core
 

@@ -179,7 +179,7 @@ local function CreateZone(type, number)
                     TriggerEvent('qb-truckerjob:client:Vehicle')
                 elseif type == "stores" then
                     markerLocation = coords
-                    QBCore.Functions.Notify(Lang:t("mission.store_reached"))
+                     -- QBCore.Functions.Notify(Lang:t("mission.store_reached"))
                     TriggerEvent('qb-truckerjob:client:ShowMarker', true)
                     TriggerEvent('qb-truckerjob:client:SetDelivering', true)
                 end
@@ -467,8 +467,11 @@ CreateThread(function()
             sleep = 0
         end
         if Delivering then
+            exports['qb-core']:DrawText('coje el paquete en la puerta trasera pulsando  [E]', 'right')
+                
             if IsControlJustReleased(0, 38) then
                 if not hasBox then
+                    exports['qb-core']:HideText()
                     TriggerEvent('qb-trucker:client:GetInTrunk')
                 else
                     TriggerEvent('qb-trucker:client:Deliver')
